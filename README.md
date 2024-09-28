@@ -1,1 +1,2 @@
-"# flowpy" 
+Flowpy, a simple python script whcih uses the Graphviz library to create flowcharts of code.
+Had a shitty assignment to submit all the practicals as flowcharts. so wrote this simple script, with the help of gpt.

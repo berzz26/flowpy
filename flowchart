@@ -1,0 +1,18 @@
+// Flowchart
+digraph {
+	Start [label=Start shape=oval]
+	main [label=main shape=rectangle]
+	Start -> main
+	a [label=a shape=rectangle]
+	main -> a
+	b [label=b shape=rectangle]
+	a -> b
+	c [label=c shape=rectangle]
+	b -> c
+	"(c > 15)" [label="if ((c > 15))" shape=diamond]
+	c -> "(c > 15)"
+	"(\"%d\", c)" [label="Output: (\"%d\", c)" shape=parallelogram]
+	"(c > 15)" -> "(\"%d\", c)"
+	"(\"Nono\")" [label="Output: (\"Nono\")" shape=parallelogram]
+	"(c > 15)" -> "(\"Nono\")"
+}
