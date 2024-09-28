@@ -25,12 +25,14 @@ class FlowchartGenerator:
                 self.graph.edge(self.current_node, func_name)
                 self.current_node = func_name
 
-            elif '=' in line:
-                var_name, value = line.split('=')
-                var_name = var_name.strip()
-                value = value.split(';')[0].strip()  
-                self.add_node(var_name, f'{var_name} = {value}', 'rectangle') 
-                self.graph.edge(self.current_node, var_name)
+            elif 'scanf' in line:  # Handle input
+                self.add_node('Input_A', 'Input A', 'parallelogram')  # Block for Input A
+                self.graph.edge(self.current_node, 'Input_A')
+                self.current_node = 'Input_A'
+                
+                self.add_node('Input_B', 'Input B', 'parallelogram')  # Block for Input B
+                self.graph.edge(self.current_node, 'Input_B')
+                self.current_node = 'Input_B'
 
             elif line.startswith('if '):
                 condition = line.split('if ')[1].split('{')[0].strip()
@@ -59,14 +61,12 @@ class FlowchartGenerator:
         self.graph.render('flowchart', format='png')
         print("Flowchart generated and saved as 'flowchart.png'.")
 
-# put your C code to generate flowchart
-#sample code
-c_code = """  /
+# Example C code to generate flowchart
+c_code = """
 #include <stdio.h>
 
 void main() {
-   int a = 10;
-   int b = 20;
+   scanf("%d%d", &a, &b);  // Input for A and B
 
    int c = a + b;
 
@@ -79,5 +79,6 @@ void main() {
 }
 """
 
+# Running the flowchart generator
 generator = FlowchartGenerator()
 generator.generate_flowchart(c_code)

@@ -3,12 +3,12 @@ digraph {
 	Start [label=Start shape=oval]
 	main [label=main shape=rectangle]
 	Start -> main
-	a [label=a shape=rectangle]
-	main -> a
-	b [label=b shape=rectangle]
-	a -> b
+	Input_A [label="Input A" shape=parallelogram]
+	main -> Input_A
+	Input_B [label="Input B" shape=parallelogram]
+	Input_A -> Input_B
 	c [label=c shape=rectangle]
-	b -> c
+	Input_B -> c
 	"(c > a && c > b)" [label="if ((c > a && c > b))" shape=diamond]
 	c -> "(c > a && c > b)"
 	"(\"C greater\")" [label="Output: (\"C greater\")" shape=parallelogram]
