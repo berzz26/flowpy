@@ -5,7 +5,7 @@ class FlowchartGenerator:
         self.graph = graphviz.Digraph(comment='Flowchart')
         self.graph.node('Start', 'Start', shape='oval')
         self.current_node = 'Start'
-        self.nodes_created = set() 
+        self.nodes_created = set()  
 
     def add_node(self, name, label, shape):
         if name not in self.nodes_created: 
@@ -70,11 +70,11 @@ void main() {
 
    int c = a + b;
 
-   if (c > 15) {
-       printf("%d", c);
+   if (c > a && c > b) {
+       printf("C greater");
    }
    else {
-        printf("Nono");
+        printf("C not greater");
    }
 }
 """

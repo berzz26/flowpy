@@ -9,10 +9,10 @@ digraph {
 	a -> b
 	c [label=c shape=rectangle]
 	b -> c
-	"(c > 15)" [label="if ((c > 15))" shape=diamond]
-	c -> "(c > 15)"
-	"(\"%d\", c)" [label="Output: (\"%d\", c)" shape=parallelogram]
-	"(c > 15)" -> "(\"%d\", c)"
-	"(\"Nono\")" [label="Output: (\"Nono\")" shape=parallelogram]
-	"(c > 15)" -> "(\"Nono\")"
+	"(c > a && c > b)" [label="if ((c > a && c > b))" shape=diamond]
+	c -> "(c > a && c > b)"
+	"(\"C greater\")" [label="Output: (\"C greater\")" shape=parallelogram]
+	"(c > a && c > b)" -> "(\"C greater\")"
+	"(\"C not greater\")" [label="Output: (\"C not greater\")" shape=parallelogram]
+	"(c > a && c > b)" -> "(\"C not greater\")"
 }
